@@ -69,16 +69,6 @@ Remember: organization is the key. Keep the JavaScript related to your layout an
 
 Take a look above. We are not adding a **Start** button. If you think about it, we don't need it. We can render the tiles and create a listener to begin the game when the user clicks on an element. 
 
-### Add your jQuery library
-
-- At the bottom of your `body` element, you can already add the CDN for your jQuery library:
-
-```html
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-```
-Also, link your `js` file. We already know how to do it :wink:.
-
 ### Add your styles
 
 - In the `header` section, remember to add the link to your CSS file.
@@ -124,17 +114,21 @@ MemoryGame.prototype.isFinished = function() {
 
 Think about the interactions your user and the game will have: basically the user will click on elements of the page and receive a result - whether he guessed the pair or not.
 
-- The first thing we need to do is use the information to dynamically fill the tiles in the board element. As we want this behavior to be trigged as soon as the page loads, we need to wrap it under a `document.ready` method. Use jQuery to change the elements dynamically.
+- The first thing we need to do is use the information to dynamically fill the tiles in the board element. As we want this behavior to be trigged as soon as the page loads, we need to wrap it under a `window.addEventListener('load', main)` method.
 
 ```javascript
-$(document).ready(function(){
-});
+function main () {
+
+};
+
+window.addEventListener('load', main);
 ```
 
 - The other important interaction is the click listener. Remember to add the listeners when the document is loaded.
 
 ```javascript
-$('.back').click(function(){
+back.addEventListener('click', function () {
+
 });
 ```
 
@@ -162,7 +156,6 @@ In this Learning Unit, you were able to separate the logic of the game from the 
 
 ## Extra Resources
 
-- [jQuery](https://jquery.com/)
 - [Fisher-Yates Shuffle](https://bost.ocks.org/mike/shuffle/)
 
 
