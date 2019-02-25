@@ -6,7 +6,7 @@
 After this learning unit, you will be able to:
 
 - Dynamically change the look of an HTML element
-- Use jQuery to select and trigger changes in your page
+- Use DOM Manipulation to select and trigger changes in your page
 - Understand the logic behind the Memory game
 - Show off a little bit for the first time with your recently acquired front-end abilities :wink:
 
@@ -152,7 +152,7 @@ To flip a card, there are different possibilities. One them is toggle the classe
 
 ## Summary
 
-In this Learning Unit, you were able to separate the logic of the game from the logic of the user interaction. You used jQuery to listen to events and trigger the game. Also, learned a new useful shuffle algorithm.
+In this Learning Unit, you were able to separate the logic of the game from the logic of the user interaction. You used DOM Manipulation to listen to events and trigger the game. Also, learned a new useful shuffle algorithm.
 
 ## Extra Resources
 
