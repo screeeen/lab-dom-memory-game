@@ -50,6 +50,9 @@ function main () {
     // TODO: Your code goes here!
   });
   
+  
+  
+  // Helpers to create the logic of the game
   function turnBackCards() {
     setTimeout(function () {
       memoryGame.pickedCards[0].style.background = '#456783';
