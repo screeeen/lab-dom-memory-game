@@ -37,17 +37,44 @@ function main () {
 
   // Add all the div's to the HTML
   var memoryBoard = document.querySelector('#memory_board');
-  if(memoryBoard) {
+  if(memoryBoard) { // this condition is for passing the tests
     memoryBoard.innerHTML = html;
   }
-
+  
+  // You will need to do something to the front as well
   var front = document.querySelectorAll('.front');
 
   // Bind the click event of each element to a function
   var back = document.querySelector('.back');
   back.addEventListener('click', function () {
-    // TODO: write some code here
-  }) ;
+    // TODO: Your code goes here!
+  });
+  
+  function turnBackCards() {
+    setTimeout(function () {
+      memoryGame.pickedCards[0].style.background = '#456783';
+      memoryGame.pickedCards[1].style.background = '#456783';
+      memoryGame.pickedCards[0].classList.remove('active');
+      memoryGame.pickedCards[1].classList.remove('active');
+      prepareNextTurn();
+    }, 1000);
+  }
+  
+  function prepareNextTurn() {
+    memoryGame.pickedCards = [];
+    back.forEach((element)=> element.classList.remove('blocked'))
+    front.forEach((element)=> element.classList.remove('blocked'))
+  }
+  
+  function printGameInfo() {
+    document.getElementById('pairs_clicked').innerHTML = memoryGame.pairsClicked;
+    document.getElementById('pairs_guessed').innerHTML = memoryGame.pairsGuessed;
+  }
+  
+  function displayClickedCard(card) {
+    card.className += ' active';
+    card.style.background = 'url(img/' + card.getAttribute('name') + ') no-repeat';
+  }
 };
 
 window.addEventListener('load', main);
