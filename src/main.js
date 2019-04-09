@@ -36,8 +36,12 @@ function main () {
   });
 
   // Add all the div's to the HTML
-  var memoryBorad = document.querySelector('#memory_board');
-  memoryBorad.innerHTML = html;
+  var memoryBoard = document.querySelector('#memory_board');
+  if(memoryBoard) {
+    memoryBoard.innerHTML = html;
+  }
+
+  var front = document.querySelectorAll('.front');
 
   // Bind the click event of each element to a function
   var back = document.querySelector('.back');
