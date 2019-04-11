@@ -26,7 +26,8 @@ function main() {
 
   // Bind the click event of each element to a function
   var back = document.querySelectorAll(".back");// returns node list
-  console.log(back);
+  // let arr = [...back]
+  // console.log("arr " + arr);
   back.forEach(card => {
     console.log("card assigning listener " + card);
     card.addEventListener("click", displayClickedCard);
@@ -55,7 +56,8 @@ function printGameInfo() {
   document.getElementById("pairs_guessed").innerHTML = memoryGame.pairsGuessed;
 }
 
-function displayClickedCard(card) {
+function displayClickedCard(e) {
+  let card = e.target; 
   card.className += " active";
   card.style.background =
     "url(img/" + card.getAttribute("name") + ") no-repeat";
